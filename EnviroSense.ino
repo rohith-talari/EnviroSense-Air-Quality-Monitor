@@ -3,8 +3,8 @@
 #include <DHT.h>
 
 // WiFi credentials - CHANGE THESE
-const char* ssid = "TSRM-WELCOME";
-const char* password = "0Welcome#";
+const char* ssid = "user_name"; // modify with your SSID
+const char* password = "{assword"; //update your password
 
 // DHT22 settings
 #define DHTPIN D2
@@ -223,3 +223,4 @@ void handleData() {
   
   server.send(200, "application/json", json);
 }
+
