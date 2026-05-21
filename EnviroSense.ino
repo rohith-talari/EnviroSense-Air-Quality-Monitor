@@ -4,7 +4,7 @@
 
 // WiFi credentials - CHANGE THESE
 const char* ssid = "user_name"; // modify with your SSID
-const char* password = "{assword"; //update your password
+const char* password = "{password"; //update your password
 
 // DHT22 settings
 #define DHTPIN D2
@@ -119,7 +119,7 @@ void loop() {
       Serial.print(humidity);
       Serial.println(" %");
     }
-    Serial.print("🌍 Air Quality: ");
+    Serial.print("Air Quality: ");
     Serial.print(airQuality);
     Serial.print(" - ");
     Serial.println(airQualityStatus);
@@ -174,8 +174,8 @@ void handleRoot() {
   html += "<div class='sensor-box'><div class='sensor-icon'>💧</div><div class='sensor-label'>Humidity</div><div class='sensor-value pulse'>--</div><div class='sensor-unit'>%</div></div>";
   html += "<div class='sensor-box'><div class='sensor-icon'>🌫️</div><div class='sensor-label'>Air Quality</div><div class='sensor-value pulse'>--</div><div class='sensor-unit'>PPM</div></div>";
   html += "</div>";
-  html += "<div class='status' id='statusBox'>🔄 Loading sensor data...</div>";
-  html += "<div class='update-time' id='updateTime'>⏱️ Initializing...</div>";
+  html += "<div class='status' id='statusBox'>Loading sensor data...</div>";
+  html += "<div class='update-time' id='updateTime'> Initializing...</div>";
   html += "</div>";
   html += "<div class='footer'>";
   html += "<p>Powered by ESP8266 NodeMCU | DHT22 | MQ135</p>";
@@ -197,10 +197,10 @@ void handleRoot() {
   html += "    statusBox.textContent = icon + ' Air Quality: ' + data.status;";
   html += "    statusBox.className = 'status status-' + data.status.toLowerCase();";
   html += "    const now = new Date();";
-  html += "    document.getElementById('updateTime').textContent = '🕒 Last updated: ' + now.toLocaleTimeString();";
+  html += "    document.getElementById('updateTime').textContent = ' Last updated: ' + now.toLocaleTimeString();";
   html += "  }).catch(err => {";
   html += "    console.error('Error fetching data:', err);";
-  html += "    document.getElementById('statusBox').textContent = '⚠️ Connection Error';";
+  html += "    document.getElementById('statusBox').textContent = ' Connection Error';";
   html += "  });";
   html += "}";
   html += "updateData();";
